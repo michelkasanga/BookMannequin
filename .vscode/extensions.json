@@ -1,6 +1,10 @@
 {
     "recommendations": [
         "tabnine.tabnine-vscode",
-        "svipas.code-autocomplete"
+        "svipas.code-autocomplete",
+        "ritwickdey.liveserver",
+        "yandeu.five-server",
+        "negokaz.live-server-preview",
+        "ms-vsliveshare.vsliveshare"
     ]
 }

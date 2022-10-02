@@ -1,50 +1,49 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+
   <link rel="icon" href="../App/View/template/set/images/logo1.png" type="image/gif" />
   <title>
-  <?= $title = $title ?? ' '; ?>
+    <?= $title = $title ?? ' '; ?>
   </title>
   <!--     Fonts and icons     -->
-  
+
 
   <link rel="stylesheet" href="../App/View/template/set/css/one.css">
   <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="../App/View/template/admin/assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../App/View/template/admin/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="public/css/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="../App/View/template/admin/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="../App/View/template/admin/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
-  <link id="pagestyle" href="../App/View/template/admin/assets/css/find.css" rel="stylesheet" />
+  <link id="pagestyle" href="public/css/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
+  <link id="pagestyle" href="public/css/assets/css/find.css" rel="stylesheet" />
 
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 
   <!-- CSS Files -->
-  
+
   <link rel="stylesheet" href="../App/View/template/set/css/bootstrap.min.css">
-      
+
 
 </head>
 
 <body class="">
- 
-<div class="container position-sticky z-index-sticky top-0">
+
+  <div class="container position-sticky z-index-sticky top-0">
     <div class="row">
       <div class="col-12">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
-            <span class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " >
+            <span class="navbar-brand font-weight-bolder ms-lg-0 ms-3 ">
               <?= $title = $title ?? 'roxanne'; ?>
             </span>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +62,7 @@
                   </a>
                 </li>
               </ul>
-            
+
             </div>
           </div>
         </nav>
@@ -71,22 +70,22 @@
       </div>
     </div>
   </div>
-  <div class="vide">    
-        </div>
-        <main class="main-content position-static border-radius-lg " >
-        
+  <div class="vide">
+  </div>
+  <main class="main-content position-static border-radius-lg ">
 
-  <?=$content?>
 
-        </main>
-        <div class="vide">    
-        </div>
+    <?= $content ?>
+
+  </main>
+  <div class="vide">
+  </div>
   <!--   Core JS Files   -->
-  <script src="../App/View/template/admin/assets/js/core/popper.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/core/bootstrap.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/plugins/chartjs.min.js"></script>
+  <script src="public/css/assets/js/core/popper.min.js"></script>
+  <script src="public/css/assets/js/core/bootstrap.min.js"></script>
+  <script src="public/css/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="public/css/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="public/css/assets/js/plugins/chartjs.min.js"></script>
 
   <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
@@ -99,7 +98,7 @@
     new Chart(ctx1, {
       type: "line",
       data: {
-        labels: [" ","annonce", "news", "model", "comment"," "],
+        labels: [" ", "annonce", "news", "model", "comment", " "],
         datasets: [{
           label: "pourcentage",
           tension: 0.00,
@@ -109,7 +108,7 @@
           backgroundColor: gradientStroke1,
           borderWidth: 3,
           fill: true,
-          data:[" ",<?=$pourcentage_notice;?>,<?=$pourcentage_news;?>,<?=$pourcentage_model;?>,<?=$pourcentage_comment;?>," ",100],
+          data: [" ", <?= $pourcentage_notice; ?>, <?= $pourcentage_news; ?>, <?= $pourcentage_model; ?>, <?= $pourcentage_comment; ?>, " ", 100],
           maxBarThickness: 6
 
         }],
@@ -183,7 +182,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../App/View/template/admin/assets/js/argon-dashboard.min.js?v=2.0.2"></script>
+  <script src="public/css/assets/js/argon-dashboard.min.js?v=2.0.2"></script>
 </body>
 
 </html>

@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Model\Table;
 
 class AuthTable extends Table
@@ -7,11 +8,14 @@ class AuthTable extends Table
 
     public function findMail($mail)
     {
-        return $this->query('SELECT * FROM '.$this->table.' WHERE mail=?',[$mail],false);
+        return $this->query('SELECT * FROM ' . $this->table . ' WHERE mail=?', [$mail], false);
     }
     public function findName($name)
     {
-        return $this->query('SELECT * FROM '.$this->table.' WHERE username=?',[$name],false);
+        return $this->query('SELECT * FROM ' . $this->table . ' WHERE username=?', [$name], false);
     }
-    
+    // public function controlUser($name)
+    // {
+    //     return $this->query('SELECT * FROM ' . $this->table . ' WHERE username=?, password=?,mail=? ', [$name,$], false);
+    // }
 }

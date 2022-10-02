@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 namespace App\Model\Table;
 
 class CommentTable extends Table

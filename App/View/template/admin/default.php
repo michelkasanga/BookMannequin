@@ -8,25 +8,25 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="../App/View/template/set/images/logo1.png" type="image/gif" />
   <title>
-  <?=$title = $title ?? 'draya';?>
+    <?= $title = $title ?? 'draya'; ?>
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link rel="stylesheet" href="../App/View/template/set/css/font-awesome/font-awesome.css">
   <!-- Nucleo Icons -->
-  <link href="../App/View/template/admin/assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../App/View/template/admin/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="public/css/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../App/View/template/set/slider/css/slider.css">
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="../App/View/template/admin/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="../App/View/template/admin/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
-  <link id="pagestyle" href="../App/View/template/admin/assets/css/find.css" rel="stylesheet" />
+  <link id="pagestyle" href="public/css/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
+  <link id="pagestyle" href="public/css/assets/css/find.css" rel="stylesheet" />
   <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
   <!-- <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css"> -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -80,7 +80,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
             <span class="nav-link-text ms-1">Virtual Reality</span>
           </a>
         </li>
-      
+
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
         </li>
@@ -101,25 +101,25 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?src=logOut&id=<?=$user->id;?>">
+          <a class="nav-link" href="?src=logOut&id=<?= $user->id; ?>">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-copy-04 text-warning text-sm opacity-10">
               </i>
             </div>
             <span class="nav-link-text ms-1">Deconnection</span>
           </a>
-          
+
         </li>
-      
+
       </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
-    <?php foreach(App::getTable('UsersPicture')->findPicture($user->id) as $picture):?>
-      <div class="card card-plain shadow-none" id="sidenavCard">
-        <img class="w-50 mx-auto" src="../App/Photo/UsersPicture/<?= $picture->picture;?>" alt="sidebar_illustration">
-        <?php endforeach;?>
-      </div>
-      </div> 
+      <?php foreach (App::getTable('UsersPicture')->findPicture($user->id) as $picture) : ?>
+        <div class="card card-plain shadow-none" id="sidenavCard">
+          <img class="w-50 mx-auto" src="../App/Photo/UsersPicture/<?= $picture->picture; ?>" alt="sidebar_illustration">
+        <?php endforeach; ?>
+        </div>
+    </div>
   </aside>
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
@@ -128,9 +128,9 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?=$title = $title ?? 'page';?></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?= $title = $title ?? 'page'; ?></li>
           </ol>
-          <h6 class="font-weight-bolder text-white mb-0"><?=$title = $title ?? 'draya';?></h6>
+          <h6 class="font-weight-bolder text-white mb-0"><?= $title = $title ?? 'draya'; ?></h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -143,7 +143,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
             <li class="nav-item d-flex align-items-center">
               <a href="?src=profile" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none"><?= $user->username;?></span>
+                <span class="d-sm-inline d-none"><?= $user->username; ?></span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -238,25 +238,25 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
       </div>
     </nav>
     <!-- End Navbar -->
-    
-      <?= $content?>
-      <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                | direct <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank"> | draya</a>
-                | mannequin
-              </div>
+
+    <?= $content ?>
+    <footer class="footer pt-3  ">
+      <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6 mb-lg-0 mb-4">
+            <div class="copyright text-center text-sm text-muted text-lg-start">
+              © <script>
+                document.write(new Date().getFullYear())
+              </script>,
+              | direct <i class="fa fa-heart"></i> by
+              <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank"> | draya</a>
+              | mannequin
             </div>
-          
           </div>
+
         </div>
-      </footer>
+      </div>
+    </footer>
   </main>
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
@@ -312,7 +312,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
         <div class="mt-2 mb-5 d-flex">
           <h6 class="mb-0">Light / Dark</h6>
           <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto"  type="checkbox" checked="active" id="dark-version" onclick="darkMode(this)">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" checked="active" id="dark-version" onclick="darkMode(this)">
           </div>
         </div>
         <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/argon-dashboard">Free Download</a>
@@ -331,11 +331,11 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../App/View/template/admin/assets/js/core/popper.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/core/bootstrap.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="../App/View/template/admin/assets/js/plugins/chartjs.min.js"></script>
+  <script src="public/css/assets/js/core/popper.min.js"></script>
+  <script src="public/css/assets/js/core/bootstrap.min.js"></script>
+  <script src="public/css/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="public/css/assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="public/css/assets/js/plugins/chartjs.min.js"></script>
 
   <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
@@ -348,7 +348,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
     new Chart(ctx1, {
       type: "line",
       data: {
-        labels: [" ","annonce", "news", "model", "article"," "],
+        labels: [" ", "annonce", "news", "model", "article", " "],
         datasets: [{
           label: "pourcentage",
           tension: 0.00,
@@ -358,7 +358,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
           backgroundColor: gradientStroke1,
           borderWidth: 3,
           fill: true,
-          data:[" ",<?=$pourcentage_notice;?>,<?=$pourcentage_news;?>,<?=$pourcentage_model;?>,<?=$pourcentage_article;?>," ",100],
+          data: [" ", <?= $pourcentage_notice; ?>, <?= $pourcentage_news; ?>, <?= $pourcentage_model; ?>, <?= $pourcentage_article; ?>, " ", 100],
           maxBarThickness: 6
 
         }],
@@ -432,7 +432,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../App/View/template/admin/assets/js/argon-dashboard.min.js?v=2.0.2"></script>
+  <script src="public/css/assets/js/argon-dashboard.min.js?v=2.0.2"></script>
 </body>
 
 </html>
