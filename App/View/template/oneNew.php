@@ -1,5 +1,5 @@
 <?php $title;?>
-<img src="../App/Photo/NewsPicture/<?=$onenew->picture;?>" style="width: 100%;height:auto"/>
+<img src="App/Photo/NewsPicture/<?=$onenew->picture;?>" style="width: 100%;height:auto"/>
 <?=" <br><small>$time</small><br><p>$onenew->content</p>";?>
  
     

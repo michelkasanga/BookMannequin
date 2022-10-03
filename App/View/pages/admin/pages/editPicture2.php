@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body">
                 <div class=" col-xl-4 col-lg-12 col-md-12 d-flex flex-row mx-lg-0  mx-auto" style="box-shadow: 1px 1px 15px black; " >
-                        <img src="../App/Photo/About/<?= $find->picture2;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
+                        <img src="App/Photo/About/<?= $find->picture2;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
                 </div>
 
   <form method="post" action="" enctype="multipart/form-data">

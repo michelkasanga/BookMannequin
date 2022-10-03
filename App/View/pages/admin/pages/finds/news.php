@@ -20,7 +20,7 @@
 
                         </div>
                         <div class="post-thumb" >
-                            <img class="img-fluid" id="img-fluid" src="../App/Photo/NewsPicture/<?= $findNews->picture;?>" alt="<?= $findNews->picture;?>" >
+                            <img class="img-fluid" id="img-fluid" src="App/Photo/NewsPicture/<?= $findNews->picture;?>" alt="<?= $findNews->picture;?>" >
                         </div>
                     </div>
                 </li>

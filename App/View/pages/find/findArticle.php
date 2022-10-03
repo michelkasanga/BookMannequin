@@ -17,7 +17,7 @@
 
                         </div>
                         <div class="post-thumb" >
-                            <img class="img-fluid" id="img-fluid" src="../App/Photo/ArticlePicture/<?= $findArticle->picture;?>" alt="<?= $findArticle->picture;?>" >
+                            <img class="img-fluid" id="img-fluid" src="App/Photo/ArticlePicture/<?= $findArticle->picture;?>" alt="<?= $findArticle->picture;?>" >
                         </div>
                     </div>
                 </li>

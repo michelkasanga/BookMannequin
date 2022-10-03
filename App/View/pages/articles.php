@@ -16,7 +16,7 @@
 							<div class="fh5co-post-image">
 								<div class="fh5co-overlay"></div>	
 									<!-- <div class="fh5co-category"><a href="#">Tutorial</a></div> -->
-								<img src="../App/Photo/ArticlePicture/<?= $article->picture;?>" alt="<?= $article->picture;?>" class="img-responsive">
+								<img src="App/Photo/ArticlePicture/<?= $article->picture;?>" alt="<?= $article->picture;?>" class="img-responsive">
 							</div>
 							<div class="fh5co-post-text">
 								<h3><a href="?src=34d2405248f96f68a53d744975dace088147607a&id=<?= $article->id;?>"><?= $article->title;?></a></h3>

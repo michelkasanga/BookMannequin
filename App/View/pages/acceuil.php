@@ -78,7 +78,7 @@
         <li class="item-a">
             <div class="box">
                 <div class="slide-img">
-                    <img src="../App/Photo/NewsPicture/<?=$new->picture;?>" alt="<?=$new->picture;?>">
+                    <img src="App/Photo/NewsPicture/<?=$new->picture;?>" alt="<?=$new->picture;?>">
                     <div class="overlay">
                         <a href="?src=pages.oneNew&id=<?=$new->id;?>" class="buy-btn">Detail</a>
                     </div>
@@ -124,8 +124,8 @@
             <div id="gallery" class="gallery">    
             
                     <div  id="lightgallery" class="lightgallery" style="width: 100%; height:100%;">
-                        <a href="../App/Photo/ModelPicture/<?=$models->picture;?>" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="400">
-                            <img class="img-fluid" src="../App/Photo/ModelPicture/<?=$models->picture;?>" alt="Gallery Image" style="width: 100%; height:100%;">
+                        <a href="App/Photo/ModelPicture/<?=$models->picture;?>" data-aos="fade-up"  data-aos-delay="200" data-aos-duration="400">
+                            <img class="img-fluid" src="App/Photo/ModelPicture/<?=$models->picture;?>" alt="Gallery Image" style="width: 100%; height:100%;">
                             <i class="fa fa-caret-right"></i>
                         </a>
                         
@@ -252,7 +252,7 @@
 							<div class="fh5co-post-image">
 								<div class="fh5co-overlay"></div>	
 									<!-- <div class="fh5co-category"><a href="#">Tutorial</a></div> -->
-								<img src="../App/Photo/ArticlePicture/<?= $articles->picture;?>" alt="<?= $articles->picture;?>" class="img-responsive">
+								<img src="App/Photo/ArticlePicture/<?= $articles->picture;?>" alt="<?= $articles->picture;?>" class="img-responsive">
 							</div>
 							<div class="fh5co-post-text">
 								<h3><a href="?src=34d2405248f96f68a53d744975dace088147607a&id=<?= $articles->id;?>"><?= ucfirst($articles->title) ;?></a></h3>
@@ -311,19 +311,19 @@
                 </div>
                 <div class="col-xl-5 gallery">
                     <div class="row no-gutters h-100" id="lightgallery">
-                        <a href="../App/Photo/About/<?=$abouts->picture1;?>" class="w-50 h-100 gal-img" data-aos="fade-up"
+                        <a href="App/Photo/About/<?=$abouts->picture1;?>" class="w-50 h-100 gal-img" data-aos="fade-up"
                             data-aos-delay="200" data-aos-duration="400">
-                            <img class="img-fluid" src="../App/Photo/About/<?=$abouts->picture1;?>" alt="Gallery Image">
+                            <img class="img-fluid" src="App/Photo/About/<?=$abouts->picture1;?>" alt="Gallery Image">
                             <i class="fa fa-caret-right"></i>
                         </a>
-                        <a href="../App/Photo/About/<?=$abouts->picture2;?>" class="w-50 h-50 gal-img" data-aos="fade-up"
+                        <a href="App/Photo/About/<?=$abouts->picture2;?>" class="w-50 h-50 gal-img" data-aos="fade-up"
                             data-aos-delay="400" data-aos-duration="600">
-                            <img class="img-fluid" src="../App/Photo/About/<?=$abouts->picture2;?>" alt="Gallery Image">
+                            <img class="img-fluid" src="App/Photo/About/<?=$abouts->picture2;?>" alt="Gallery Image">
                             <i class="fa fa-caret-right"></i>
                         </a>
-                        <a href="../App/Photo/About/<?=$abouts->picture3;?>" class="w-50 h-50 gal-img gal-img3" data-aos="fade-up"
+                        <a href="App/Photo/About/<?=$abouts->picture3;?>" class="w-50 h-50 gal-img gal-img3" data-aos="fade-up"
                             data-aos-delay="0" data-aos-duration="600">
-                            <img class="img-fluid" src="../App/Photo/About/<?=$abouts->picture3;?>" alt="Gallery Image">
+                            <img class="img-fluid" src="App/Photo/About/<?=$abouts->picture3;?>" alt="Gallery Image">
                             <i class="fa fa-caret-right"></i>
                         </a>
                     
@@ -409,7 +409,7 @@
                             <div class="row">
                                 <div class="offset-lg-1 col-lg-10">
                                     <div class="test-img" data-aos="fade-up" data-aos-delay="0" data-aos-offset="0" style="border: 2px solid white;"><img
-                                            src="../App/Photo/ClubPicture/<?=$club->picture;?>" alt="<?=$club->picture;?>" ></div>
+                                            src="App/Photo/ClubPicture/<?=$club->picture;?>" alt="<?=$club->picture;?>" ></div>
                                     <h5 data-aos="fade-up" data-aos-delay="200" data-aos-duration="600"
                                         data-aos-offset="0"><?=$club->name;?></h5>
                                     <span data-aos="fade-up" data-aos-delay="400" data-aos-duration="600"

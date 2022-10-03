@@ -8,7 +8,7 @@
               <div class=" p-0">
                 <div class="col-12">
                   <div class="col-12" id="col" >
-                    <img src="../App/Photo/ModelPicture/<?=$findModel->picture;?>" alt="<?=$findModel->picture;?>" class="align-middle text-center"  id="photo">
+                    <img src="App/Photo/ModelPicture/<?=$findModel->picture;?>" alt="<?=$findModel->picture;?>" class="align-middle text-center"  id="photo">
                   </div>
                     
                     <p class="align-middle text-center"><small ><?= $findModel->date;?></small></p>

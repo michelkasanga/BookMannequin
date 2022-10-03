@@ -104,7 +104,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../App/Photo/NewsPicture/<?=$new->picture;?>" class="avatar avatar-sm me-3" alt="user2">
+                            <img src="App/Photo/NewsPicture/<?=$new->picture;?>" class="avatar avatar-sm me-3" alt="user2">
                           </div>
                         </div>
                       </td>
@@ -188,7 +188,7 @@
                         <td>
                           <div class="align-middle d-flex px-2 py-1">
                             <div>
-                              <img src="../App/Photo/ModelPicture/<?=$model->picture;?>" class="avatar avatar-sm me-3" alt="user2">
+                              <img src="App/Photo/ModelPicture/<?=$model->picture;?>" class="avatar avatar-sm me-3" alt="user2">
                             </div>
                           </div>
                         </td>
@@ -336,7 +336,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../App/Photo/ArticlePicture/<?=$articles->picture;?>" class="avatar avatar-sm me-3" alt="user2">
+                            <img src="App/Photo/ArticlePicture/<?=$articles->picture;?>" class="avatar avatar-sm me-3" alt="user2">
                           </div>
                         </div>
                       </td>
@@ -422,7 +422,7 @@
                       <td class="align-middle text-center">
                         <div class="d-flex px-2">
                           <div>
-                            <img src="../App/Photo/CompetitionPicture/<?= $compet->picture;?>" class="avatar avatar-sm rounded-circle me-2" alt="<?= $compet->picture;?>">
+                            <img src="App/Photo/CompetitionPicture/<?= $compet->picture;?>" class="avatar avatar-sm rounded-circle me-2" alt="<?= $compet->picture;?>">
                           </div>
                         </div>
                       </td>
@@ -525,7 +525,7 @@
                       <td class="align-middle text-center">
                         <div class="d-flex px-2">
                           <div>
-                            <img src="../App/Photo/ClubPicture/<?= $club->picture;?>" class="avatar avatar-sm rounded-circle me-2" alt="<?= $club->picture;?>">
+                            <img src="App/Photo/ClubPicture/<?= $club->picture;?>" class="avatar avatar-sm rounded-circle me-2" alt="<?= $club->picture;?>">
                           </div>
                         </div>
                       </td>

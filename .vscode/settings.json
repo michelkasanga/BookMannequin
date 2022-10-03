@@ -1,1 +1,4 @@
-{}
+{
+    "liveServer.settings.CustomBrowser": "microsoft-edge",
+    "liveServer.settings.fullReload": true
+}

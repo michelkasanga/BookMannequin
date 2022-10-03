@@ -48,7 +48,7 @@
                   
                     <div class="post-thumb" >
                   
-                            <img class="img-fluid" id="img-fluid" src="../App/Photo/CompetitionPicture/<?= $find->picture;?>" alt="<?= $find->picture;?>" >
+                            <img class="img-fluid" id="img-fluid" src="App/Photo/CompetitionPicture/<?= $find->picture;?>" alt="<?= $find->picture;?>" >
                     </div>
                  
                   </div>
@@ -65,7 +65,7 @@
                   </div>
                   <div class="post-thumb" >
                   
-                  <?=  str_replace([',','?'],[ '<img class="img-fluid" id="img-fluid"  src="../App/Photo/CompetitionPicture/','">'],$find->picture2);?>
+                  <?=  str_replace([',','?'],[ '<img class="img-fluid" id="img-fluid"  src="App/Photo/CompetitionPicture/','">'],$find->picture2);?>
                     </div>
                 
                 

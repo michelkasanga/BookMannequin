@@ -13,7 +13,7 @@
                 <div class="card-body">
 
                     <div class=" col-xl-4 col-lg-12 col-md-12 d-flex flex-row mx-lg-0  mx-auto" style="box-shadow: 1px 1px 15px black; margin:10px 0px 0px 10px; border-radius:50px;" >
-                        <img src="../App/Photo/About/<?= $find->picture1;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
+                        <img src="App/Photo/About/<?= $find->picture1;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
                         <div class="card d-flex flex-column mx-lg-0  py-4">
                         <h2 class="card col-xl-4 col-lg-5 col-md-7 flex-row" >
                             Photo_1
@@ -27,7 +27,7 @@
 
                     </div>
                     <div class=" col-xl-4 col-lg-12 col-md-12 d-flex flex-row mx-lg-0  mx-auto" style="box-shadow: 1px 1px 15px black; margin:10px 0px 0px 10px; border-radius:50px;" >
-                        <img src="../App/Photo/About/<?= $find->picture2;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
+                        <img src="App/Photo/About/<?= $find->picture2;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
                         <div class="card d-flex flex-column mx-lg-0  py-4">
                         <h2 class="card col-xl-4 col-lg-5 col-md-7 flex-row" >
                             Photo_2
@@ -41,7 +41,7 @@
 
                     </div>
                     <div class=" col-xl-4 col-lg-12 col-md-12 d-flex flex-row mx-lg-0  mx-auto" style="box-shadow: 1px 1px 15px black; margin:10px 0px 0px 10px; border-radius:50px;" >
-                        <img src="../App/Photo/About/<?= $find->picture3;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
+                        <img src="App/Photo/About/<?= $find->picture3;?>" alt="" class="col-xl-4 col-lg-5 col-md-7" style="display: absolute; width:50%;">
                         <div class="card d-flex flex-column mx-lg-0  py-4">
                         <h2 class="card col-xl-4 col-lg-5 col-md-7 flex-row" >
                             Photo_3

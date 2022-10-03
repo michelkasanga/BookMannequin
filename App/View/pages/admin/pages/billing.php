@@ -5,7 +5,7 @@
           <div class="row">
             <div class="col-xl-6 mb-xl-0 mb-4">
               <div class="card bg-transparent shadow-xl">
-                <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('../App/Photo/ServicePicture6529259bbbee462db98fef613c98e752.jpg');">
+                <div class="overflow-hidden position-relative border-radius-xl" style="background-image: url('App/Photo/ServicePicture6529259bbbee462db98fef613c98e752.jpg');">
                   <span class="mask bg-gradient-dark"></span>
                   <div class="card-body position-relative z-index-1 p-3">
                     <i class="fas fa-wifi text-white p-2"></i>
@@ -296,7 +296,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12lex d-f">
                               <div  class="post-thumb">
                                   <div class="" >
-                                <img class="img-fluid" id="img-fluid" src="../App/Photo/About/<?= $about->picture1;?>" alt="<?= $about->picture1;?>" >
+                                <img class="img-fluid" id="img-fluid" src="App/Photo/About/<?= $about->picture1;?>" alt="<?= $about->picture1;?>" >
                               </div>
                               </div>
                             
@@ -305,13 +305,13 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 d-flex" style="width: 100%; padding-top:5px;">
                             <div >
                               <div class="post-thumb "  style="width:100%; height:100%;padding:2px;">
-                                <img class="img-fluid" id="img-fluid" src="../App/Photo/About/<?= $about->picture2;?>" alt="<?= $about->picture2;?>" style="width: 100%;  height: 100%;object-fit: cover;  box-sizing: border-box ;" >
+                                <img class="img-fluid" id="img-fluid" src="App/Photo/About/<?= $about->picture2;?>" alt="<?= $about->picture2;?>" style="width: 100%;  height: 100%;object-fit: cover;  box-sizing: border-box ;" >
                               </div>
                             </div>
                               <div >
                             
                               <div class="post-thumb " style="width: 100%; height:100%; padding:2px;"  >
-                                <img class="img-fluid" id="img-fluid" src="../App/Photo/About/<?= $about->picture3;?>" alt="<?= $about->picture3;?>" style="width: 100%;  height: 100%;object-fit: cover;  box-sizing: border-box ;" >
+                                <img class="img-fluid" id="img-fluid" src="App/Photo/About/<?= $about->picture3;?>" alt="<?= $about->picture3;?>" style="width: 100%;  height: 100%;object-fit: cover;  box-sizing: border-box ;" >
                               </div>
                             </div>
                             </div>

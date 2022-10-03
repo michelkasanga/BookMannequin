@@ -17,7 +17,7 @@
 
                         </div>
                         <div class="post-thumb" >
-                            <img class="img-fluid" id="img-fluid" src="../App/Photo/NewsPicture/<?= $onenew->picture;?>" alt="<?= $onenew->picture;?>" >
+                            <img class="img-fluid" id="img-fluid" src="App/Photo/NewsPicture/<?= $onenew->picture;?>" alt="<?= $onenew->picture;?>" >
                         </div>
                     </div>
                 </li>

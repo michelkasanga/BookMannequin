@@ -15,7 +15,7 @@
                     <?php foreach($news as $new):?>
 					<div class="col-md-4">
 						<div class="team-box text-center to-animate-2">
-							<div class="user"><img class="img-reponsive" src="../App/Photo/NewsPicture/<?=$new->picture;?>" alt="Roger Garfield"></div>
+							<div class="user"><img class="img-reponsive" src="App/Photo/NewsPicture/<?=$new->picture;?>" alt="Roger Garfield"></div>
 							<a  href="?src=pages.oneNew&id=<?=$new->id;?>" class="mb-0 px-0 py-0 d-flex align-items-center justify-content-center " style="margin-top:25px; font-size:14px; text-transform:uppercase; color:black; font-weight:bold;"><?=$new->title;?></a>
 							<span class="position mb-0 px-0 py-1 d-flex align-items-center justify-content-center "><?= App\Model\php\Time::timing($new->date,$new->time);?></span>
 							<p><?=htmlspecialchars(substr($new->content,0,150));?><a href="?src=pages.oneNew&id=<?=$new->id;?>">...voir plus</a></p>

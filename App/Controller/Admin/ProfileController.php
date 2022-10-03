@@ -23,7 +23,7 @@ class ProfileController extends AppController
     public function changeProfilePicture()
     {
         $users = $this->Auth->find($_SESSION['auth']);
-        $picture = $this->File->upload('picture','../App/Photo/UsersPicture/');
+        $picture = $this->File->upload('picture','App/Photo/UsersPicture/');
         $id = $users->id;
             if(isset($picture)):
                 

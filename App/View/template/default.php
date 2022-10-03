@@ -140,7 +140,7 @@
     </div>
 
   </aside>
-  <main class="main-content position-relative border-radius-lg ">
+  <main class="main-content position-relative border-radius-lg " id="div">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-0 px-0">
@@ -402,7 +402,10 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+
+    
   </script>
+  
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="public/css/assets/js/argon-dashboard.min.js?v=2.0.2"></script>

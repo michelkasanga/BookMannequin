@@ -7,7 +7,7 @@
             <div class="col-auto">
               <div class="avatar avatar-xl position-relative  navbar-brand m-0" >
               
-                <img src="../App/Photo/UsersPicture/<?= $picture->picture;?>" alt="profile_image" class=" navbar-brand-img w-80 h-100 border-radius-lg shadow-sm" style="width: 100%; height:100%;">
+                <img src="App/Photo/UsersPicture/<?= $picture->picture;?>" alt="profile_image" class=" navbar-brand-img w-80 h-100 border-radius-lg shadow-sm" style="width: 100%; height:100%;">
               </div>
             </div>
           <?php endforeach;?>

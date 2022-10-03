@@ -1,7 +1,7 @@
 <?php
 
 use App\App;
-
+// header('Refresh:5');
 $user =  App::getTable('Auth')->find($_SESSION['auth']);
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="../App/View/template/set/images/logo1.png" type="image/gif" />
+  <link rel="icon" href="public/css/set/images/logo1.png" type="image/gif" />
   <title>
     <?= $title = $title ?? 'draya'; ?>
   </title>
@@ -41,7 +41,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" " target="_blank">
-        <img src="../App/View/template/set/images/logo1.png" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="public/css/set/images/logo1.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">DRAYA MODEL</span>
       </a>
     </div>
@@ -116,7 +116,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
     <div class="sidenav-footer mx-3 ">
       <?php foreach (App::getTable('UsersPicture')->findPicture($user->id) as $picture) : ?>
         <div class="card card-plain shadow-none" id="sidenavCard">
-          <img class="w-50 mx-auto" src="../App/Photo/UsersPicture/<?= $picture->picture; ?>" alt="sidebar_illustration">
+          <img class="w-50 mx-auto" src="App/Photo/UsersPicture/<?= $picture->picture; ?>" alt="sidebar_illustration">
         <?php endforeach; ?>
         </div>
     </div>
