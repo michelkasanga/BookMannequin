@@ -27,6 +27,8 @@ class AdminController extends AppController
         $this->loadClass('Auth');
         $this->loadClass('Service');
         $this->loadClass('Icons');
+        $this->loadClass('Event');
+        $this->loadClass('ModelEvent');
     }
     public function index()
     {
@@ -39,6 +41,10 @@ class AdminController extends AppController
         $about = $this->About->all();
         $comment = $this->Comment->all();
         $article = $this->Article->all();
+        $event = $this->Event->all();
+        $modelEvent =  $this->ModelEvent->find('none');
+
+
 
         $notice_count = count($notice_all);
         $pourcentage_notice =  ($notice_count * 100) / 5000;
@@ -65,7 +71,7 @@ class AdminController extends AppController
                 'stars' => " &#8902 &#8902 &#8902 &#8902 &#8902 ",
                 'number_stars' => 5
             ]);
-            
+
             $this->Level_competition->create([
                 'title' => "Eliminer en demi-finale",
                 'percentage' => 75,
@@ -73,7 +79,7 @@ class AdminController extends AppController
                 'stars' => "&#8902 &#8902 &#8902 &#8902 ",
                 'number_stars' => 4
             ]);
-            
+
             $this->Level_competition->create([
                 'title' => "Eliminer en quart de finale",
                 'percentage' => 60,
@@ -107,6 +113,12 @@ class AdminController extends AppController
             ]);
         }
 
+        if (count($modelEvent) == 0) {
+            $this->ModelEvent->create([
+                'title' => 'none'
+            ]);
+        }
+
         $this->defaultAdmin(
             "pages.admin.pages.index",
             compact(
@@ -121,7 +133,8 @@ class AdminController extends AppController
                 "pourcentage_news",
                 "news",
                 "model",
-                "about"
+                "about",
+                "event"
             )
         );
     }
