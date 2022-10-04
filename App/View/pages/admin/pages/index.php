@@ -308,6 +308,10 @@
       <div class="card-header pb-0 p-3">
         <h6 class="mb-0">Event</h6>
       </div>
+      <div class="col-md-10 d-flex justify-content-end align-items-center">
+
+        <small><a href="?src=addEvent" style="color:deeppink; font-weight:800;">Ajouter</a></small>
+      </div>
       <div class="card-body p-3">
         <ul class="list-group">
           <?php foreach ($event as $events) : ?>
@@ -315,7 +319,7 @@
               <div class="d-flex align-items-center">
                 <div class="  px-2">
                   <div>
-                    <img src="App/Photo/CompetitionPicture/625ed2bc58d51.jpg" class="avatar avatar-sm rounded-circle me-2" alt="">
+                    <img src="App/Photo/EventPicture/<?= $events->picture; ?>" class="avatar avatar-sm rounded-circle me-2" alt="">
                   </div>
 
                 </div>
@@ -339,9 +343,7 @@
     <div class="row align-items-center justify-content-lg-between">
       <div class="col-lg-6 mb-lg-0 mb-4">
         <div class="copyright text-center text-sm text-muted text-lg-start">
-          © <script>
-            document.write(new Date().getFullYear())
-          </script>
+
         </div>
       </div>
 

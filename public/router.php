@@ -81,6 +81,9 @@ if ($src === 'home') {
 } elseif ($src === 'addArticle') {
     $controller = new AdminController();
     $controller->AddArticle();
+} elseif ($src === 'addEvent') {
+    $controller = new AdminController();
+    $controller->addEvent();
 } elseif ($src === 'addCategory_model') {
     $controller = new AdminController();
     $controller->addCategory_model();

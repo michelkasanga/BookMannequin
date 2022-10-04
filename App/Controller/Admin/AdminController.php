@@ -304,6 +304,31 @@ class AdminController extends AppController
         $this->find2("pages.admin.pages.addModel", compact('category'));
     }
 
+    public function  addEvent()
+    {
+        $model = $this->ModelEvent->all();
+        $time = time();
+        $picture = $this->File->upload('picture', 'App/Photo/EventPicture/');
+
+        if (!empty($_POST)) :
+            if (isset($_POST)) :
+                $this->Event->create([
+                    'title' => $_POST['title'],
+                    'dateEvent' => $_POST['dateEvent'],
+                    'detail' => $_POST['detail'],
+                    'picture' => "$picture",
+                    'date' => date('Y-m-d H:i:s'),
+                    'time' => "$time",
+                    'idModel' => $_POST['model']
+
+
+                ]);
+                header('Location:?src=admin');
+            endif;
+        endif;
+        $this->default2("pages.admin.pages.addEvent", compact('model'));
+    }
+
     public function AddCompetition()
     {
         $title = 'Ajouter une Competition';
