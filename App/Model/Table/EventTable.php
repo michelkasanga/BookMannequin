@@ -15,7 +15,6 @@ class EventTable extends Table
             FROM modelevent as m
             JOIN event as e
             ON e.idModel=  m.id
-            
             ORDER BY e.id DESC
             "
         );
