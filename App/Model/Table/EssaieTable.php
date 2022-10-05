@@ -1,6 +1,6 @@
-<?php 
+<?php
+
 namespace App\Model\Table;
-use UI\Controls\Tab;
 
 class EssaieTable extends Table
 {
@@ -8,6 +8,6 @@ class EssaieTable extends Table
 
     public function fileLoad()
     {
-        return $this->query('SELECT * FROM '.$this->table.' ORDER BY id DESC LIMIT 0,1');
+        return $this->query('SELECT * FROM ' . $this->table . ' ORDER BY id DESC LIMIT 0,1');
     }
 }

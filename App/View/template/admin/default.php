@@ -20,6 +20,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
   <!-- Nucleo Icons -->
   <link href="public/css/assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="public/css/fonts/icomoon/icomoon/style.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="../App/View/template/set/slider/css/slider.css">
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>

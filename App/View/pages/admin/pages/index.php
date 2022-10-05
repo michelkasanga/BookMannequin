@@ -324,12 +324,29 @@
 
                 </div>
                 <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm"><?= $events->titleEvent; ?></h6>
+                  <h6 class="mb-1 text-dark text-sm"> <a href="?src=viewEvent&id=<?= $events->idEvent; ?>"><?= $events->titleEvent; ?></a></h6>
                   <span class="text-xs"><?= date_format(date_create($events->dateEvent), 'd M Y  à  H:i'); ?> ,<span class="font-weight-bold" style="color:pink; font-family:cursive; "><?= $events->titleModel; ?></span><span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(89)</span></span>
                 </div>
               </div>
               <div class=" d-flex">
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
+
+                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?= $events->idEvent; ?>" aria-hidden="true"></a>
+                </button>&nbsp;&nbsp;&nbsp;
+
+                <form action="?src=deleteEvent&id=<?= $events->idEvent; ?>" method="post" class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                  <input type="hidden" name="id" value="<?= $events->idEvent; ?>">
+                  <button style="font-size: 15px; border: none; background:none; color:red;" href="?src=deleteEvent&id=<?= $events->idEvent; ?>" class="icon icon-trash"></button>
+
+                </form>&nbsp;&nbsp;
+
+                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                  <a style="font-size: 15px;" class="ni ni-bold-right" href="?src=viewEvent&id=<?= $events->idEvent; ?>"></a>
+                </button>
+                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                  <a class="" aria-hidden=" true"></a>
+                </button>
+
               </div>
             </li>
           <?php endforeach; ?>

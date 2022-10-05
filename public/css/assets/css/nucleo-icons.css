@@ -1,14 +1,14 @@
 /*--------------------------------
 
-hermes-dashboard-icons Web Font - built using nucleoapp.com
+hermes-dashboard-nis Web Font - built using nucleoapp.com
 License - nucleoapp.com/license/
 
 -------------------------------- */
 @font-face {
   font-family: 'NucleoIcons';
-  src: url('../fonts/nucleo-icons.eot');
-  src: url('../fonts/nucleo-icons.eot') format('embedded-opentype'), url('../fonts/nucleo-icons.woff2') format('woff2'), url('../fonts/nucleo-icons.woff') format('woff'), url('../fonts/nucleo-icons.ttf') format('truetype'), url('../fonts/nucleo-icons.svg') format('svg');
-  font-weight: normal;
+  src: url('../fonts/nucleo-nis.eot');
+  src: url('../fonts/nucleo-nis.eot') format('embedded-opentype'), url('../fonts/nucleo-nis.woff2') format('woff2'), url('../fonts/nucleo-nis.woff') format('woff'), url('../fonts/nucleo-nis.ttf') format('truetype'), url('../fonts/nucleo-nis.svg') format('svg');
+   font-weight: normal;
   font-style: normal;
 }
 
@@ -26,7 +26,7 @@ License - nucleoapp.com/license/
 }
 
 /*------------------------
-  change icon size
+  change ni size
 -------------------------*/
 .ni-lg {
   font-size: 1.33333333em;
@@ -65,7 +65,7 @@ License - nucleoapp.com/license/
 }
 
 /*------------------------
-  list icons
+  list nis
 -------------------------*/
 .ni-ul {
   padding-left: 0;
@@ -96,7 +96,7 @@ License - nucleoapp.com/license/
 }
 
 /*------------------------
-  spinning icons
+  spinning nis
 -------------------------*/
 .ni.spin {
   -webkit-animation: nc-spin 2s infinite linear;
@@ -143,7 +143,7 @@ License - nucleoapp.com/license/
 }
 
 /*------------------------
-  rotated/flipped icons
+  rotated/flipped nis
 -------------------------*/
 .ni.rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
@@ -191,7 +191,7 @@ License - nucleoapp.com/license/
 }
 
 /*------------------------
-    font icons
+    font nis
 -------------------------*/
 
 .ni-active-40::before {
@@ -595,4 +595,5 @@ License - nucleoapp.com/license/
 }
 
 
-/* all icon font classes list here */
+/* all ni font classes list here */
+
