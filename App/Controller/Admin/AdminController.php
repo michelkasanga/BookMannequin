@@ -29,6 +29,7 @@ class AdminController extends AppController
         $this->loadClass('Icons');
         $this->loadClass('Event');
         $this->loadClass('ModelEvent');
+        $this->loadClass('GuestEvent');
     }
     public function index()
     {
@@ -845,6 +846,13 @@ class AdminController extends AppController
             header('Location:?src=tables');
         }
     }
+    public function deleteEvent(){
+        if (!empty($_POST)) {
+            $this->Event->delete($_POST['id']);
+            $this->GuestEvent->delete($_POST['id']);
+            header('Location:?src=admin');
+        }
+    }
     public function deletePersonne()
     {
         if (!empty($_POST)) {
@@ -959,22 +967,23 @@ class AdminController extends AppController
     }
     public function addPictureCompetition()
     {
-        $title = 'Ajouter des photos';
-        $find = $this->Competition->findCompetition($_GET['id']);
-        $picture1 = $this->File->upload('picture1', 'App/Photo/CompetitionPicture/');
-        $picture20 = $this->File->upload('picture2', 'App/Photo/CompetitionPicture/');
-        $picture3 = $this->File->upload('picture3', 'App/Photo/CompetitionPicture/');
-        $picture4 = $this->File->upload('picture4', 'App/Photo/CompetitionPicture/');
-        $picture5 = $this->File->upload('picture5', 'App/Photo/CompetitionPicture/');
-        $picture6 = $this->File->upload('picture6', 'App/Photo/CompetitionPicture/');
-        $picture = $find->picture2;
-        if (strlen($picture) === 0) {
-            if (isset($picture1) and isset($picture20) and isset($picture3) and isset($picture4) and isset($picture5) and isset($picture6)) {
-                $this->Competition->update($_GET['id'], [
-                    'picture2' => ",$picture1? ,$picture20? ,$picture3? ,$picture4? ,$picture5? ,$picture6? "
-                ]);
-                header('Location:?src=_c_o_m_p_e_t_i_t_i_o_n_&id=' . $find->id);
-            }
+    $title = 'Ajouter des photos';
+    $find = $this->Competition->findCompetition($_GET['id']);
+    $picture1 = $this->File->upload('picture1', 'App/Photo/CompetitionPicture/');
+    $picture20 = $this->File->upload('picture2', 'App/Photo/CompetitionPicture/');
+    $picture3 = $this->File->upload('picture3', 'App/Photo/CompetitionPicture/');
+    $picture4 = $this->File->upload('picture4', 'App/Photo/CompetitionPicture/');
+    $picture5 = $this->File->upload('picture5', 'App/Photo/CompetitionPicture/');
+    $picture6 = $this->File->upload('picture6', 'App/Photo/CompetitionPicture/');
+    $picture = $find->picture2;
+    if (strlen($picture) === 0) {
+        if (isset($picture1) and isset($picture20) and isset($picture3) and isset($picture4) and isset($picture5) and isset($picture6)) {
+        $this->Competition->update($_GET['id'], [
+            'picture2' => ",$picture1? ,$picture20? ,$picture3? ,$picture4? ,$picture5? ,$picture6? "
+        ]);
+        header('Location:?src=_c_o_m_p_e_t_i_t_i_o_n_&id=' . $find->id);
+    }
+  
         } else {
             if (isset($picture1) and isset($picture20) and isset($picture3) and isset($picture4) and isset($picture5) and isset($picture6)) {
                 $this->Competition->update($_GET['id'], [

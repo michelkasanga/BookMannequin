@@ -19,4 +19,5 @@ class EventTable extends Table
             "
         );
     }
+    
 }

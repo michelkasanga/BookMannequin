@@ -25,15 +25,15 @@
 	<link rel="stylesheet" type="text/css" href="../App/View/template/set/galerie/css/lightbox.css">
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../App/View/template/set/galerie/js/lightbox-plus-jquery.min.js"></script>
+  <script type="text/javascript" src="public/css/set/galerie/js/lightbox-plus-jquery.min.js"></script>
 
-<link rel="stylesheet" href="../App/View/template/set/post/css/cards.css">
-<link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css">
+<link rel="stylesheet" href="public/css/set/post/css/cards.css">
+<link rel="stylesheet" href="public/css/set/post/css/icomoon.css">
 
-<link rel="stylesheet" href="../App/View/template/set/css/one.css">
-  <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
+<link rel="stylesheet" href="public/css/set/css/one.css">
+  <link rel="stylesheet" href=public/css//set/css/demo.css">
 
-<link rel="stylesheet" type="text/css" href="../public/Font/style.css">
+<link rel="stylesheet" type="text/css" href="public/Font/style.css">
   <!-- CSS Files -->
   
       

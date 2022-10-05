@@ -20,4 +20,8 @@ class CommentTable extends Table
     {
         return $this->query("SELECT *  FROM {$this->table} WHERE address_ip =? ORDER BY id DESC LIMIT 0,1 ", [$id]);
     }
+    public function delete($id)
+    {
+        return $this->query('DELETE  FROM '. $this->table.' WHERE news_id=?',[$id],false);
+    }
 }

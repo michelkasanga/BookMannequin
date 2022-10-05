@@ -325,7 +325,10 @@
                 </div>
                 <div class="d-flex flex-column">
                   <h6 class="mb-1 text-dark text-sm"> <a href="?src=viewEvent&id=<?= $events->idEvent; ?>"><?= $events->titleEvent; ?></a></h6>
-                  <span class="text-xs"><?= date_format(date_create($events->dateEvent), 'd M Y  à  H:i'); ?> ,<span class="font-weight-bold" style="color:pink; font-family:cursive; "><?= $events->titleModel; ?></span><span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(89)</span></span>
+                  <span class="text-xs bold"><?= date_format(date_create($events->dateEvent), 'd M Y  à  H:i'); ?> ,
+                    <span class="font-weight-bold" style="color:pink; font-family:cursive; "><?= $events->titleModel; ?></span>
+                    <span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(<?= count($this->GuestEvent->findGuestEvent($events->idEvent)) ;?>)</span>
+                </span>
                 </div>
               </div>
               <div class=" d-flex">

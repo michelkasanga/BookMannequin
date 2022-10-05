@@ -12,8 +12,8 @@
   <!--     Fonts and icons     -->
 
 
-  <link rel="stylesheet" href="../App/View/template/set/css/one.css">
-  <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
+  <link rel="stylesheet" href="public/css/set/css/one.css">
+  <link rel="stylesheet" href="public/css/set/css/demo.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="public/css/assets/css/nucleo-icons.css" rel="stylesheet" />
@@ -30,7 +30,7 @@
 
   <!-- CSS Files -->
 
-  <link rel="stylesheet" href="../App/View/template/set/css/bootstrap.min.css">
+  <link rel="stylesheet" href="public/css/set/css/bootstrap.min.css">
 
 
 </head>

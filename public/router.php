@@ -1,8 +1,8 @@
 <?php
 
-use App\Controller\Admin\ProfileController;
-use App\Controller\Admin\AdminController;
 use App\App;
+use App\Controller\Admin\AdminController;
+use App\Controller\Admin\ProfileController;
 use App\Controller\LoadController;
 use App\Controller\UserController;
 
@@ -16,7 +16,6 @@ if (isset($_GET['src'])) {
 } else {
     $src = 'home';
 }
-
 
 if ($src === 'home') {
     $controller = new LoadController();
@@ -180,7 +179,12 @@ if ($src === 'home') {
 } elseif ($src === 'deletePersonne') {
     $controller = new AdminController();
     $controller->deletePersonne();
-} elseif ($src === 'delete_1a8565a9dc72048ba03b4156be3e569f22771f23') {
+} 
+elseif($src=== 'deleteEvent'){
+    $controller = new AdminController();
+    $controller->deleteEvent();
+}
+elseif ($src === 'delete_1a8565a9dc72048ba03b4156be3e569f22771f23') {
     $controller = new AdminController();
     $controller->deletemanager();
 } elseif ($src === 'factory') {
