@@ -1,47 +1,57 @@
+ <?php
 
+use App\App;
+
+$user = App::getTable('Auth')->find($_SESSION['auth']);
+?>
 <main class="main-content  mt-0">
-    <section>
-      <div class="page-header min-vh-100">
+    <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg'); background-position: top;">
+        <span class="mask bg-gradient-dark opacity-6"></span>
         <div class="container">
-          <div class="row">
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
-              <div class="card card-plain">
-                <div class="card-header pb-0 text-start">
-                  <h4 class="font-weight-bolder">Ajouter une annonce</h4>
-                  <p class="mb-0"></p>
+            <div class="row justify-content-center">
+                <div class="col-lg-5 text-center mx-auto">
+                    <h1 class="text-white mb-2 mt-5">Notice</h1>
+                    <p class="text-lead text-white">Ajouter une annonce en remplissant les champs <b><?=$user->username;?></b> </p>
                 </div>
-                <div class="card-body">
-
-  <form method="post" action="">
-                    <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" name="title" placeholder="Titre de l'annonce" >
-                    </div>
-                    <div class="mb-3">
-                        <textarea rows="" cols="" value="contenus" name="content" class="form-control form-control-lg" placeholder="Contenus" >
-                    
-                        </textarea>
-                    
-                    </div>
-                    
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Ajouter</button>
-                    </div>
-                  </form>
-
-
-                </div>
-              </div>
             </div>
-            <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
-          background-size: cover;">
-                <span class="mask bg-gradient-primary opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Attention is the new currency"</h4>
-                <p class="text-white position-relative">The more effortless the writing looks, the more effort the writer actually put into the process.</p>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-  </main>
+    </div>
+    <div class="container">
+        <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+            <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
+                <div class="card z-index-0">
+                    <div class="card-header text-center pt-4">
+                        <!-- <h5>Insrivez-vous </h5> -->
+                    </div>
+
+                    <div class="card-body">
+
+                        <form method="post" action="" enctype="multipart/form-data" role="form">
+                            <div class="mb-3">
+                                <input type="text" name="title" class="form-control" placeholder="Nom  de l'evenement " aria-label="Name">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <textarea name="content" class="form-control" placeholder="contenu" aria-label="Password"></textarea>
+                            </div>
+                            <div class="mt-2 mb-5 d-flex">
+                              <h6 class="mb-0">Non / Oui</h6>
+                              <div class="form-check form-switch ps-0 ms-auto my-auto" >
+                              <input class="form-check-input mt-1 ms-auto"  type="checkbox" name="view">
+                              </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Ajouter</button>
+                            </div>
+
+                        </form>
+
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

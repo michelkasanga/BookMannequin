@@ -28,7 +28,6 @@ class AdminController extends AppController
         $this->loadClass('Service');
         $this->loadClass('Icons');
         $this->loadClass('Event');
-        $this->loadClass('ModelEvent');
         $this->loadClass('GuestEvent');
     }
     public function index()
@@ -43,7 +42,7 @@ class AdminController extends AppController
         $comment = $this->Comment->all();
         $article = $this->Article->all();
         $event = $this->Event->all();
-        $modelEvent =  $this->ModelEvent->find('none');
+    
 
 
 
@@ -114,11 +113,7 @@ class AdminController extends AppController
             ]);
         }
 
-        if (count($modelEvent) == 0) {
-            $this->ModelEvent->create([
-                'title' => 'none'
-            ]);
-        }
+       
 
         $this->defaultAdmin(
             "pages.admin.pages.index",
@@ -207,17 +202,28 @@ class AdminController extends AppController
     public function AddNotice()
     {
         $title = 'ajouter une annoce';
+        $view ="";
         if (!empty($_POST['title']) and !empty($_POST['content'])) :
-            if (isset($_POST['title']) and isset($_POST['content'])) :
+            if (isset($_POST['title']) and isset($_POST['content']) ) :
+                if($_POST['view'] == "on"){
                 $res = $this->Notice->create([
                     'title' => $_POST['title'],
                     'content' => $_POST['content'],
-                    'date' => date('Y-m-d H:i:s')
+                    'date' => date('Y-m-d H:i:s'),
+                    'view' =>1
                 ]);
+            }else{
+                $res = $this->Notice->create([
+                    'title' => $_POST['title'],
+                    'content' => $_POST['content'],
+                    'date' => date('Y-m-d H:i:s'),
+                    'view' =>0
+                ]);
+            }
                 header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
             endif;
         endif;
-        $this->find2("pages.admin.pages.addNotice", compact("title"));
+        $this->default2("pages.admin.pages.addNotice", compact("title"));
     }
 
     public function AddNews()
@@ -269,18 +275,30 @@ class AdminController extends AppController
         $picture = $this->File->upload('picture', 'App/Photo/ArticlePicture/');
         if (!empty($_POST['title']) and !empty($_POST['content'])) :
             if (isset($_POST['title']) and isset($_POST['content']) and isset($picture)) :
-
-                $res = $this->Article->create([
+                if($_POST['view'] == 'on'){
+                     $res = $this->Article->create([
                     'title' => $_POST['title'],
                     'content' => $_POST['content'],
                     'picture' => "$picture",
                     'date' => date('Y-m-d H:i:s'),
-                    'time' => "$time"
+                    'time' => "$time",
+                    'view'=>1
                 ]);
+                }else{
+                    $res = $this->Article->create([
+                        'title' => $_POST['title'],
+                        'content' => $_POST['content'],
+                        'picture' => "$picture",
+                        'date' => date('Y-m-d H:i:s'),
+                        'time' => "$time",
+                        'view'=>0
+                    ]); 
+                }
+               
                 header('Location:?src=tables');
             endif;
         endif;
-        $this->find2("pages.admin.pages.addNews", compact('title'));
+        $this->default2("pages.admin.pages.addArticle", compact('title'));
     }
 
     public function AddModel()
@@ -307,7 +325,7 @@ class AdminController extends AppController
 
     public function  addEvent()
     {
-        $model = $this->ModelEvent->all();
+       $model = "";
         $time = time();
         $picture = $this->File->upload('picture', 'App/Photo/EventPicture/');
 
@@ -319,8 +337,7 @@ class AdminController extends AppController
                     'detail' => $_POST['detail'],
                     'picture' => "$picture",
                     'date' => date('Y-m-d H:i:s'),
-                    'time' => "$time",
-                    'idModel' => $_POST['model']
+                    'time' => "$time"
 
 
                 ]);
@@ -736,15 +753,24 @@ class AdminController extends AppController
     {
         $find = $this->Article->find($_GET['id']);
         $title = 'Editer un Article';
-        if (!empty($_POST)) :
-
-            $res = $this->Article->update($_GET['id'], [
+        if (!empty($_POST['title']) AND !empty($_POST['content'])) :
+            if($_POST['view'] == 'on'){
+                 $res = $this->Article->update($_GET['id'], [
                 'title' => $_POST['title'],
-                'content' => $_POST['content']
+                'content' => $_POST['content'],
+                'view'=>1
             ]);
+            }else{
+                $res = $this->Article->update($_GET['id'], [
+                    'title' => $_POST['title'],
+                    'content' => $_POST['content'],
+                    'view'=>0
+                ]);
+            }
+           
             header('Location:?src=tables');
         endif;
-        $this->find2("pages.admin.pages.editNews", compact('find', 'title'));
+        $this->default2("pages.admin.pages.editNotice", compact('find', 'title'));
     }
     public function editCategory_model()
     {
@@ -764,15 +790,24 @@ class AdminController extends AppController
     {
         $find = $this->Notice->find($_GET['id']);
         $title = 'Editer une Annonce';
-        if (!empty($_POST)) :
-
-            $res = $this->Notice->update($_GET['id'], [
-                'title' => $_POST['title'],
-                'content' => $_POST['content']
-            ]);
+        if (!empty($_POST['title']) AND !empty($_POST['content'])) :
+            if($_POST['view'] == 'on'){
+                $res = $this->Notice->update($_GET['id'], [
+                    'title' => $_POST['title'],
+                    'content' => $_POST['content'],
+                    'view'=>1
+                ]);
+            }else{
+                $res = $this->Notice->update($_GET['id'], [
+                    'title' => $_POST['title'],
+                    'content' => $_POST['content'],
+                    'view'=>0
+                ]);
+            }
+           
             header('Location:?src=e2bdf092171e62ed1823a26b139c920be4aa8ad0');
         endif;
-        $this->find("pages.admin.pages.editNews", compact('find', 'title'));
+        $this->default2("pages.admin.pages.editNotice", compact('find', 'title'));
     }
 
     public function editLevel()
@@ -895,6 +930,31 @@ class AdminController extends AppController
         $find = $this->Competition->find($_GET['id']);
         $annees =   (int)date('Y') - (int)$find->year_b;
         $this->find('pages.admin.pages.finds.compet', compact('find', 'annees'));
+    }
+
+    public function EventFind()
+    {
+        $find = $this->Event->find($_GET['id']);
+        $guest = $this->GuestEvent->findGuestEvent($_GET['id']);
+        if(!empty($_POST)){
+            if(isset($_POST)){
+
+                $letter = ucfirst(substr($_POST['name'], 0, 1));
+                $nameLog  = strlen($_POST['name']);
+                $firstNameLog  = strlen($_POST['firstName']);
+                $addLog = ((int)$nameLog + (int)$firstNameLog + (int)date('Y'))-100;
+                $code = $letter.''.$addLog;
+                $this->GuestEvent->create([
+                    'name'=> $_POST['name'],
+                    'firstName'=> $_POST['firstName'],
+                    'code'=>"$code",
+                    'idEvent'=>$find->id
+                ]);
+
+                header('Location:?src=viewEvent&id='.$find->id);
+            }
+        }
+        $this->event('pages.admin.pages.finds.event', compact('find','guest'));
     }
     public function PersonFind()
     {

@@ -202,7 +202,11 @@ elseif ($src === 'delete_1a8565a9dc72048ba03b4156be3e569f22771f23') {
 } elseif ($src === 'article') {
     $controller = new AdminController();
     $controller->ArticleFind();
-} elseif ($src === 'personne') {
+} elseif ($src === 'viewEvent') {
+    $controller = new AdminController();
+    $controller->EventFind();
+} 
+elseif ($src === 'personne') {
     $controller = new AdminController();
     $controller->PersonFind();
 } elseif ($src === '_c_o_m_p_e_t_i_t_i_o_n_') {

@@ -53,6 +53,15 @@ class Controller
         $content = ob_get_clean();
         require($this->viewPath.'template/admin/find.php'); 
     }
+    protected function event($view,$variables=[])
+    {
+        
+        ob_start(); 
+        extract($variables);
+        require($this->viewPath.str_replace('.','/',$view).'.php');
+        $content = ob_get_clean();
+        require($this->viewPath.'template/admin/event.php'); 
+    }
     protected function find2($view,$variables=[])
     {
         

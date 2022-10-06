@@ -8,7 +8,9 @@
                     <div class="swiper-container hero-slider">
                         <div class="swiper-wrapper">
 
-                        <?php foreach($notice as $notices):?>
+                        <?php foreach($notice as $notices):
+                            if($notices->view == '1'):
+                            ?>
 
                             <div class="swiper-slide slide-content d-flex align-items-center">
                                 <div class="single-slide content ">
@@ -24,7 +26,7 @@
                                 </div>
                             </div>
 
-                        <?php endforeach;?>    
+                        <?php endif; endforeach;?>    
                     
                         </div>
 
@@ -41,6 +43,7 @@
     </section>
     <!-- Hero End -->
     <!-- Call To Action Start  -->
+    <?php if(count($competition) ===0){ } else{?>
     <section class="cta" data-aos="fade-up" data-aos-delay="0">
         <div class="container" >
         <?php foreach($competition as $compet):?>
@@ -55,7 +58,7 @@
                     
                     </label>
                 <div  class=" text-center text-lg-center px-4">
-                    <p class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column mx-lg-0 mx-auto "><?= htmlspecialchars(substr($compet->detail,0,190).'...');?></p>
+                    <p class="col-xl-12 col-lg-12 col-md-12 d-flex flex-column mx-lg-0 mx-auto "><?= htmlspecialchars(substr($compet->detail, 0, 190).'...');?></p>
                     
                 </div>
                     
@@ -68,7 +71,9 @@
             <?php endforeach;?>
         </div>
     </section>
-    
+    <?php } ?>
+
+    <?php if(count($news) ===0){ } else{?>
 <div class="all" style="padding-bottom: 0px;">
     <h1 class="titre">news</h1>
     
@@ -87,9 +92,9 @@
                     <div class="type">
                         <a href="?src=pages.oneNew&id=<?=$new->id;?>"><?=$new->title;?></a>
                         <?php
-                    
-                    $b = App\Model\php\Time::timing($new->date,$new->time);
-                ?>
+
+                $b = App\Model\php\Time::timing($new->date, $new->time);
+            ?>
                 <span class="price"><?=$b;  ?></span>
                     </div>
                     
@@ -105,7 +110,9 @@
 </section>
 </div>
 
+<?php }?>
 
+<?php if(count($model) ===0){ } else{?>
 <div id="fh5co-page">
 		<div class="fh5co-blog-style-1">
 			<div class="container gallery">
@@ -135,7 +142,7 @@
                     <div class="detail-box">
                         <div id="type">
                             <a href="?src=pages.oneModel&id=<?=$models->id;?>"><?=$models->title;?></a>
-                            <?php $b = App\Model\php\Time::timing($models->date,$models->time);?>
+                            <?php $b = App\Model\php\Time::timing($models->date, $models->time);?>
                             <span><?=$b;?></span>
                         </div>
                     </div>
@@ -158,7 +165,7 @@
 			</div>
 		</div>
 </div>
-                    
+<?php   }?>                 
     <!-- Call To Action End -->
     <!-- Services Start -->
     <!--<section class="services">
@@ -234,7 +241,7 @@
     <!-- Featured Start a propos de moi-->
     
     <!-- Featured End -->
-
+    <?php if(count($article) ===0){ } else{?>
     <div id="fh5co-page">
 		<div class="fh5co-blog-style-1">
 			<div class="container">
@@ -246,7 +253,7 @@
 				</div>
 				<div class="row p-b">
 
-				<?php foreach($article as $articles):?>
+				<?php foreach($article as $articles): if($articles->view == '1'):?>
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<div class="fh5co-post wow fadeInLeft"  data-wow-duration="1s" data-wow-delay="1.1s">
 							<div class="fh5co-post-image">
@@ -258,19 +265,19 @@
 								<h3><a href="?src=34d2405248f96f68a53d744975dace088147607a&id=<?= $articles->id;?>"><?= ucfirst($articles->title) ;?></a></h3>
 								<div class="card-body pt-0 p-0">
 									<h5 class=" text-body text-xs  mb-1">
-										<p> <?= htmlspecialchars(substr($articles->content,0,190).'...');?></p>
+										<p> <?= htmlspecialchars(substr($articles->content, 0, 190).'...');?></p>
 									</h5>
 								</div>
 								
 							</div>
 							<div class="fh5co-post-meta">
-								<span ><i class="icon-comment"></i> <?= count( $this-> Comment_article->find($articles->id));?></span>
-								<span ><i class="icon-clock2"></i> <?= App\Model\php\Time::timing($articles->date,$articles->time);?></span>
+								<span ><i class="icon-comment"></i> <?= count($this-> Comment_article->find($articles->id));?></span>
+								<span ><i class="icon-clock2"></i> <?= App\Model\php\Time::timing($articles->date, $articles->time);?></span>
 							</div>
 						</div>
 					</div>
 					
-				<?php endforeach;?>
+				<?php endif; endforeach;?>
 					
 				</div>
 				<div class="row">
@@ -286,10 +293,10 @@
 		</div>
 </div>
     <!-- article -->
-
+<?php }?>
     <!-- article End -->
 
-
+    <?php if(count($about) ===0){ } else{?>
     <!-- Trust Start photo recent-->
     <section class="trust">
         <div class="container">
@@ -301,10 +308,10 @@
                         </h6>
                         <h1><?=$abouts->title;?></h1>
                     </div>
-                     <p><?=htmlspecialchars(substr($abouts->content,0,300).'...');?> <a href="?src=9f3642c94c2f071704f2ac2ad3a0b1891634b9b9"><i>voir plus</i></a></p>
+                     <p><?=htmlspecialchars(substr($abouts->content, 0, 300).'...');?> <a href="?src=9f3642c94c2f071704f2ac2ad3a0b1891634b9b9"><i>voir plus</i></a></p>
                     <h5>mes competences</h5>
-                    <?php 
-                    $a = str_replace(',','<li>', $abouts->competence);?>
+                    <?php
+                $a = str_replace(',', '<li>', $abouts->competence);?>
                     <ul class="list-unstyled">
                         <?=$a;?>
                     </ul> 
@@ -335,6 +342,8 @@
         </div>
     </section>
     <!-- Trust End -->
+
+    <?php }?>
     <!-- Pricing Start service
     <section class="pricing-table">
         <div class="container">
@@ -396,6 +405,7 @@
     </section> -->
     <!-- Pricing End -->
     <!-- Testimonial and Clients Start -->
+    <?php if(count($clubs) ===0){ } else{?>
      <section class="testimonial-and-clients " style="margin-top:15px;">
         <div class="container py-4">
         <h3 class="titre">Club</h3>
@@ -433,7 +443,7 @@
                 </div>
             </div>
             
-            
+         <?php } ?>   
             
         
         </div>

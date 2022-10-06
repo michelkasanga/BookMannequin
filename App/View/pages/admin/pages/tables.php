@@ -321,7 +321,8 @@
                       <th class="align-middle text-left">Photo</th>
                       <th class="align-middle text-center">Titre</th>
                       <th class="align-middle text-center">Date Ajout</th>
-                      <th class="align-middle text-center">Nombre commentaire</th>
+                      <th class="align-middle text-center">commentaire</th>
+                      <th class="align-middle text-center">En ligne</th>
                       <th class="align-middle text-center">Action</th>
 
                     </tr>
@@ -351,6 +352,10 @@
 
                       <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold"><?= count($this->Comment_article->find($articles->id));?></span>
+                      </td>
+
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold"><?php if($articles->view=='1'){ echo "OUI";}else{ echo 'NON';};?></span>
                       </td>
 
                       <td class="align-middle text-center">

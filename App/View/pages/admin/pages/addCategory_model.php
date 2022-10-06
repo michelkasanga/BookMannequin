@@ -17,7 +17,7 @@
                       <input type="text" class="form-control form-control-lg" name="category" placeholder="Titre de l'annonce" >
                     </div>
                     
-                    
+    
                     <div class="text-center">
                       <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Ajouter</button>
                     </div>

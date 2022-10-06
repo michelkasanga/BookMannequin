@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use App\App;
 
@@ -10,8 +10,8 @@ $user = App::getTable('Auth')->find($_SESSION['auth']);
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5 text-center mx-auto">
-                    <h1 class="text-white mb-2 mt-5">Event</h1>
-                    <p class="text-lead text-white">Ajouter un evenement en remplissant les champs <b><?=$user->username;?></b> </p>
+                    <h1 class="text-white mb-2 mt-5">Article</h1>
+                    <p class="text-lead text-white">Ajouter un article en remplissant les champs <b><?=$user->username;?></b> </p>
                 </div>
             </div>
         </div>
@@ -30,17 +30,19 @@ $user = App::getTable('Auth')->find($_SESSION['auth']);
                             <div class="mb-3">
                                 <input type="text" name="title" class="form-control" placeholder="Nom  de l'evenement " aria-label="Name">
                             </div>
-                            <div class="mb-3">
-                                <input type="datetime-local" name="dateEvent" class="form-control" placeholder="date de l'evenement" aria-label="Date">
-
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" name="detail" class="form-control" placeholder="detail de l'evennement" aria-label="Name">
-                            </div>
-                            <div class="mb-3">
-                                <input type="file" name="picture" class="form-control" placeholder="photo" aria-label="Password">
-                            </div>
                             
+                            <div class="mb-3">
+                                <textarea name="content" class="form-control" placeholder="contenu" aria-label="Name"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" name="picture" class="form-control" aria-label="Name">
+                            </div>
+                            <div class="mt-2 mb-5 d-flex">
+                              <h6 class="mb-0">Non / Oui</h6>
+                              <div class="form-check form-switch ps-0 ms-auto my-auto" >
+                              <input class="form-check-input mt-1 ms-auto"  type="checkbox" name="view">
+                              </div>
+                            </div>
 
                             <div class="text-center">
                                 <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Ajouter</button>
@@ -55,3 +57,4 @@ $user = App::getTable('Auth')->find($_SESSION['auth']);
         </div>
     </div>
 </main>
+

@@ -78,13 +78,12 @@
     </div>
   </div>
   <div class="vide">    
-        </div>
-        <main class="main-content position-static border-radius-lg " >
+       
         
 
   <?=$content?>
 
-        </main>
+        
         <div class="vide">    
         </div>
   <!--   Core JS Files   -->

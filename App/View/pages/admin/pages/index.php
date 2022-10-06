@@ -231,6 +231,11 @@
               </td>
               <td>
                 <div class="text-center">
+                  <h6 class="text-sm mb-0">En ligne</h6>
+                </div>
+              </td>
+              <td>
+                <div class="text-center">
                   <h6 class="text-sm mb-0">Action</h6>
                 </div>
               </td>
@@ -265,7 +270,16 @@
                 <td>
                   <div class="text-center">
                     <?php ?>
-                    <h6 class="text-sm mb-0"><i><?= date_format(date_create($all->date), 'd M Y  H:i:s'); ?></i></h6>
+                    <h6 class="text-sm mb-0"><i><?= date_format(date_create($all->date), 'd M Y  H:i'); ?></i></h6>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                   
+                    <h6 class="text-sm mb-0"><i> 
+                      <?php if($all->view == '1'){
+                                     echo 'OUI';
+                          }else{ echo 'NON';}?></i></h6>
                   </div>
                 </td>
                 <td class="align-middle text-center">
@@ -324,27 +338,27 @@
 
                 </div>
                 <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm"> <a href="?src=viewEvent&id=<?= $events->idEvent; ?>"><?= $events->titleEvent; ?></a></h6>
+                  <h6 class="mb-1 text-dark text-sm"> <a href="?src=viewEvent&id=<?= $events->id; ?>"><?= $events->title; ?></a></h6>
                   <span class="text-xs bold"><?= date_format(date_create($events->dateEvent), 'd M Y  à  H:i'); ?> ,
-                    <span class="font-weight-bold" style="color:pink; font-family:cursive; "><?= $events->titleModel; ?></span>
-                    <span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(<?= count($this->GuestEvent->findGuestEvent($events->idEvent)) ;?>)</span>
+                    
+                    <span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(<?= count($this->GuestEvent->findGuestEvent($events->id)) ;?>)</span>
                 </span>
                 </div>
               </div>
               <div class=" d-flex">
 
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?= $events->idEvent; ?>" aria-hidden="true"></a>
+                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?= $events->id; ?>" aria-hidden="true"></a>
                 </button>&nbsp;&nbsp;&nbsp;
 
-                <form action="?src=deleteEvent&id=<?= $events->idEvent; ?>" method="post" class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <input type="hidden" name="id" value="<?= $events->idEvent; ?>">
-                  <button style="font-size: 15px; border: none; background:none; color:red;" href="?src=deleteEvent&id=<?= $events->idEvent; ?>" class="icon icon-trash"></button>
+                <form action="?src=deleteEvent&id=<?= $events->id; ?>" method="post" class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                  <input type="hidden" name="id" value="<?= $events->id; ?>">
+                  <button style="font-size: 15px; border: none; background:none; color:red;" href="?src=deleteEvent&id=<?= $events->id; ?>" class="icon icon-trash"></button>
 
                 </form>&nbsp;&nbsp;
 
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="ni ni-bold-right" href="?src=viewEvent&id=<?= $events->idEvent; ?>"></a>
+                  <a style="font-size: 15px;" class="ni ni-bold-right" href="?src=viewEvent&id=<?= $events->id; ?>"></a>
                 </button>
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
                   <a class="" aria-hidden=" true"></a>
