@@ -350,6 +350,9 @@
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
                   <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?= $events->id; ?>" aria-hidden="true"></a>
                 </button>&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                  <a style="font-size: 15px;" class="icon icon-users" href="?src=viewGuests&id=<?= $events->id; ?>" aria-hidden="true"></a>
+                </button>&nbsp;&nbsp;&nbsp;
 
                 <form action="?src=deleteEvent&id=<?= $events->id; ?>" method="post" class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
                   <input type="hidden" name="id" value="<?= $events->id; ?>">

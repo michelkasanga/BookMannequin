@@ -22,4 +22,9 @@ class GuestEventTable extends Table
     {
         return $this->query('DELETE  FROM ' . $this->table . ' WHERE idEvent=?', [$id], false);
     }
+
+    public function deleteGuest($id)
+    {
+        return $this->query('DELETE  FROM ' . $this->table . ' WHERE id=?', [$id], true);
+    }
 }

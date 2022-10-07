@@ -956,6 +956,14 @@ class AdminController extends AppController
         }
         $this->event('pages.admin.pages.finds.event', compact('find','guest'));
     }
+
+    public function GuestFind()
+    {
+        $find = $this->Event->find($_GET['id']);
+        $guest = $this->GuestEvent->findGuestEvent($_GET['id']);
+        
+        $this->event('pages.admin.pages.finds.guest', compact('find','guest'));
+    }
     public function PersonFind()
     {
         $find = $this->Club->find($_GET['id']);

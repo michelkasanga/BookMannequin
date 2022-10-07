@@ -206,6 +206,10 @@ elseif ($src === 'delete_1a8565a9dc72048ba03b4156be3e569f22771f23') {
     $controller = new AdminController();
     $controller->EventFind();
 } 
+elseif ($src === 'viewGuests') {
+    $controller = new AdminController();
+    $controller->GuestFind();
+} 
 elseif ($src === 'personne') {
     $controller = new AdminController();
     $controller->PersonFind();
@@ -240,6 +244,10 @@ elseif ($src === 'personne') {
     $controller = new AdminController();
     $controller->icons();
 } elseif ($src === 'admin') {
+    $controller = new AdminController();
+    $controller->index();
+} 
+elseif ($src === 'roxanne') {
     $controller = new AdminController();
     $controller->index();
 } else {

@@ -1,3 +1,17 @@
+<?php
+
+  $app = App\App::getInstance();
+        $auth = new App\Auth\AuthUser($app->getDb());
+        if($auth->logged())
+        {
+           
+            header('Location:?src=admin');
+       
+    
+}else{
+ 
+    ?>
+
 <main class="main-content  mt-0">
     <div class="page-header align-items-start min-vh-50 pt-5 pb-11 m-3 border-radius-lg" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signup-cover.jpg'); background-position: top;">
       <span class="mask bg-gradient-dark opacity-6"></span>
@@ -63,14 +77,14 @@
             </div> -->
             <div class="card-body">
               <form method="post" action="" enctype="multipart/form-data"  role="form">
-                
+
                 <div class="mb-3">
                   <input type="text"  name="email"  class="form-control" placeholder="Email or user name" aria-label="Email">
                 </div>
                 <div class="mb-3">
                   <input type="password"  name="password"  class="form-control" placeholder="Mot de passe" aria-label="Password">
                 </div>
-              
+
                 <div class="text-center">
                   <button type="submit" class="btn bg-gradient-dark w-100 my-4 mb-2">Se connecter</button>
                 </div>
@@ -82,3 +96,5 @@
       </div>
     </div>
   </main>
+<?php } ?>
+

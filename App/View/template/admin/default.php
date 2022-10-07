@@ -16,7 +16,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-  <link rel="stylesheet" href="../App/View/template/set/css/font-awesome/font-awesome.css">
+  <link rel="stylesheet" href="nm;/public/css/set/css/font-awesome/font-awesome.css">
   <!-- Nucleo Icons -->
   <link href="public/css/assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -24,11 +24,11 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
   <link rel="stylesheet" type="text/css" href="../App/View/template/set/slider/css/slider.css">
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
+  
   <!-- CSS Files -->
   <link id="pagestyle" href="public/css/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
   <link id="pagestyle" href="public/css/assets/css/find.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../App/View/template/set/css/demo.css">
+  
   <!-- <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css"> -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
 

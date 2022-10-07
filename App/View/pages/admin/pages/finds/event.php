@@ -18,17 +18,36 @@
 
 <div class="container-fluid py-4">
     <div class="row">
-        <div class="col-md-7 mt-4">
+        <div class="col-md-4 mt-4">
           <div class="card">
             <div class="card-header pb-0 px-3">
             
               <h6 class="mb-0"></h6>
             </div>
             <div class="card-body pt-4 p-3">
-             <?php foreach($guest as $guests):?>
-<?= $guests->name;?>
-<?= $guests->code;?>
-              <?php endforeach;?>
+             
+              <ul class="list-group">
+
+<?php foreach($guest as $guests):?>
+<li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+  <div class="d-flex flex-column">
+    <h6 class="mb-3 text-sm"><?= ucfirst($guests->firstName).' '. ucwords($guests->name); ?></h6>
+
+    
+    
+    <span class="mb-2 text-xs">Code : 
+  <div class="ms-auto text-end">
+                    
+  <h3 class="text-dark font-weight-bold ms-sm-2"><?= $guests->code;?></h3>
+  </div>
+  </span>
+  </div>
+</li>
+<?php endforeach;?>
+
+
+</ul>
+              
               
             </div>
           </div>
