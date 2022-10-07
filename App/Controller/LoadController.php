@@ -15,6 +15,8 @@ class LoadController extends AppController
         $this->loadClass('Competition');
         $this->loadClass('Club');
         $this->loadClass('Comment_article');
+        $this->loadclass('GuestEvent');
+        $this->loadClass('Event');
     
 
 
@@ -28,8 +30,9 @@ class LoadController extends AppController
         $article = $this->Article->all();
         $competition = $this->Competition->lastCompetition();
         $clubs = $this->Club->all();
+        $event = $this->Event->all();
         
-        $this->default('pages.acceuil',compact('notice','news','model','about','article','competition','clubs'));
+        $this->default('pages.acceuil',compact('event','notice','news','model','about','article','competition','clubs'));
         
     }
     public function findNotice()

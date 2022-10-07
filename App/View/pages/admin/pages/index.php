@@ -1,4 +1,4 @@
-<?php $title = 'Dashboard'; ?>
+<?php $title = 'Dashboard';?>
 <div class="container-fluid py-4">
   <div class="row">
 
@@ -11,10 +11,10 @@
               <div class="numbers">
                 <p class="text-sm mb-0 text-uppercase font-weight-bold">Annonces</p>
                 <h5 class="font-weight-bolder">
-                  <?= $notice_count; ?>
+                  <?=$notice_count;?>
                 </h5>
                 <p class="mb-0">soit
-                  <span class="text-success text-sm font-weight-bolder"><?= '' . $pourcentage_notice . '%'; ?></span>
+                  <span class="text-success text-sm font-weight-bolder"><?='' . $pourcentage_notice . '%';?></span>
                 </p>
               </div>
             </div>
@@ -39,10 +39,10 @@
               <div class="numbers">
                 <p class="text-sm mb-0 text-uppercase font-weight-bold">N e w s</p>
                 <h5 class="font-weight-bolder">
-                  <?= $news_count; ?>
+                  <?=$news_count;?>
                 </h5>
                 <p class="mb-0">soit
-                  <span class="text-success text-sm font-weight-bolder"><?= "$pourcentage_news%"; ?></span>
+                  <span class="text-success text-sm font-weight-bolder"><?="$pourcentage_news%";?></span>
                 </p>
               </div>
             </div>
@@ -67,10 +67,10 @@
               <div class="numbers">
                 <p class="text-sm mb-0 text-uppercase font-weight-bold">articles</p>
                 <h5 class="font-weight-bolder">
-                  <?= "$article_count"; ?>
+                  <?="$article_count";?>
                 </h5>
                 <p class="mb-0">soit
-                  <span class="text-success text-sm font-weight-bolder"><?= "$pourcentage_article%"; ?></span>
+                  <span class="text-success text-sm font-weight-bolder"><?="$pourcentage_article%";?></span>
 
                 </p>
               </div>
@@ -94,10 +94,10 @@
               <div class="numbers">
                 <p class="text-sm mb-0 text-uppercase font-weight-bold">modeles</p>
                 <h5 class="font-weight-bolder">
-                  <?= "$model_count"; ?>
+                  <?="$model_count";?>
                 </h5>
                 <p class="mb-0">soit
-                  <span class="text-success text-sm font-weight-bolder"><?= "$pourcentage_model%"; ?></span>
+                  <span class="text-success text-sm font-weight-bolder"><?="$pourcentage_model%";?></span>
                 </p>
               </div>
             </div>
@@ -140,8 +140,8 @@
                 </div>
               </div>
             </div>
-            <?php foreach ($model as $models) : ?>
-              <div class="carousel-item h-100" style="background-image: url('App/Photo/ModelPicture/<?= $models->picture; ?>');
+            <?php foreach ($model as $models): ?>
+              <div class="carousel-item h-100" style="background-image: url('App/Photo/ModelPicture/<?=$models->picture;?>');
       background-size: cover;">
                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
 
@@ -151,7 +151,7 @@
                   </div>
                 </div>
               </div>
-            <?php endforeach; ?>
+            <?php endforeach;?>
             <!-- <div class="carousel-item h-100" style="background-image: url('../App/View/template/admin/assets/img/9.jpg');
       background-size: cover;">
               <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
@@ -246,60 +246,59 @@
           </thead>
 
           <tbody>
-            <?php foreach ($notice_all as $all) : ?>
+            <?php foreach ($notice_all as $all): ?>
               <tr>
                 <td>
                   <div class="text-center">
-                    <h6 class="text-sm mb-0"><?= $all->id; ?></h6>
+                    <h6 class="text-sm mb-0"><?=$all->id;?></h6>
                   </div>
                 </td>
                 <td>
                   <div class="text-center">
                     <h6 class="text-sm mb-0">
                       <?php
-                      if (strlen($all->title) <= 15) {
-                        echo $all->title;
-                      } else {
-                        echo   substr($all->title, 0, 15) . '...';
-                      }
+if (strlen($all->title) <= 15) {
+    echo $all->title;
+} else {
+    echo substr($all->title, 0, 15) . '...';
+}
 
-
-                      ?></h6>
+?></h6>
                   </div>
                 </td>
                 <td>
                   <div class="text-center">
                     <?php ?>
-                    <h6 class="text-sm mb-0"><i><?= date_format(date_create($all->date), 'd M Y  H:i'); ?></i></h6>
+                    <h6 class="text-sm mb-0"><i><?=date_format(date_create($all->date), 'd M Y  H:i');?></i></h6>
                   </div>
                 </td>
                 <td>
                   <div class="text-center">
-                   
-                    <h6 class="text-sm mb-0"><i> 
-                      <?php if($all->view == '1'){
-                                     echo 'OUI';
-                          }else{ echo 'NON';}?></i></h6>
+
+                    <h6 class="text-sm mb-0"><i>
+                      <?php if ($all->view == '1') {
+    echo 'OUI';
+} else {echo 'NON';}?></i></h6>
                   </div>
                 </td>
                 <td class="align-middle text-center">
                   <span class="text-secondary text-xs font-weight-bold">
-                    <a href="?src=editNotice&id=<?= $all->id; ?>">
+                    <a href="?src=editNotice&id=<?=$all->id;?>">
                       <div class="btn btn-warning">
                         modif
                       </div>
                     </a>
 
                     <form action="?src=deleteNotice" method="post" style="display: inline;">
-                      <input type="hidden" name="id" value="<?= $all->id; ?>">
-                      <button href="?src=deleteNotice&id=<?= $all->id; ?>" class="btn btn-danger">Supp</button>
+                      <input type="hidden" name="id" value="<?=$all->id;?>">
+                      <button href="?src=deleteNotice&id=<?=$all->id;?>" class="btn btn-danger">Supp</button>
                     </form>
 
                   </span>
                 </td>
 
                 <td>
-                  <a href="?src=notice&id=<?= $all->id; ?>">
+                  <a href="?src=notice&id=<?=$all->id;?>">
                     <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
                       <i class="ni ni-bold-right" aria-hidden="true"></i>
                     </button>
@@ -310,7 +309,7 @@
 
 
               </tr>
-            <?php endforeach; ?>
+            <?php endforeach;?>
           </tbody>
 
         </table>
@@ -328,40 +327,40 @@
       </div>
       <div class="card-body p-3">
         <ul class="list-group">
-          <?php foreach ($event as $events) : ?>
+          <?php foreach ($event as $events): ?>
             <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
               <div class="d-flex align-items-center">
                 <div class="  px-2">
                   <div>
-                    <img src="App/Photo/EventPicture/<?= $events->picture; ?>" class="avatar avatar-sm rounded-circle me-2" alt="">
+                    <img src="App/Photo/EventPicture/<?=$events->picture;?>" class="avatar avatar-sm rounded-circle me-2" alt="">
                   </div>
 
                 </div>
                 <div class="d-flex flex-column">
-                  <h6 class="mb-1 text-dark text-sm"> <a href="?src=viewEvent&id=<?= $events->id; ?>"><?= $events->title; ?></a></h6>
-                  <span class="text-xs bold"><?= date_format(date_create($events->dateEvent), 'd M Y  à  H:i'); ?> ,
-                    
-                    <span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(<?= count($this->GuestEvent->findGuestEvent($events->id)) ;?>)</span>
+                  <h6 class="mb-1 text-dark text-sm"> <a href="?src=viewEvent&id=<?=$events->id;?>"><?=$events->title;?></a></h6>
+                  <span class="text-xs bold"><?=date_format(date_create($events->dateEvent), 'd M Y  à  H:i');?> ,
+
+                    <span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(<?=count($this->GuestEvent->findGuestEvent($events->id));?>)</span>
                 </span>
                 </div>
               </div>
               <div class=" d-flex">
 
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?= $events->id; ?>" aria-hidden="true"></a>
+                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?=$events->id;?>" aria-hidden="true"></a>
                 </button>&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="icon icon-users" href="?src=viewGuests&id=<?= $events->id; ?>" aria-hidden="true"></a>
+                  <a style="font-size: 15px;" class="icon icon-users" href="?src=viewGuests&id=<?=$events->id;?>" aria-hidden="true"></a>
                 </button>&nbsp;&nbsp;&nbsp;
 
-                <form action="?src=deleteEvent&id=<?= $events->id; ?>" method="post" class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <input type="hidden" name="id" value="<?= $events->id; ?>">
-                  <button style="font-size: 15px; border: none; background:none; color:red;" href="?src=deleteEvent&id=<?= $events->id; ?>" class="icon icon-trash"></button>
+                <form action="?src=deleteEvent&id=<?=$events->id;?>" method="post" class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
+                  <input type="hidden" name="id" value="<?=$events->id;?>">
+                  <button style="font-size: 15px; border: none; background:none; color:red;" href="?src=deleteEvent&id=<?=$events->id;?>" class="icon icon-trash"></button>
 
                 </form>&nbsp;&nbsp;
 
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="ni ni-bold-right" href="?src=viewEvent&id=<?= $events->id; ?>"></a>
+                  <a style="font-size: 15px;" class="ni ni-bold-right" href="?src=viewEvent&id=<?=$events->id;?>"></a>
                 </button>
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
                   <a class="" aria-hidden=" true"></a>
@@ -369,7 +368,7 @@
 
               </div>
             </li>
-          <?php endforeach; ?>
+          <?php endforeach;?>
         </ul>
       </div>
     </div>
