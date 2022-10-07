@@ -942,7 +942,7 @@ class AdminController extends AppController
                 $letter = ucfirst(substr($_POST['name'], 0, 1));
                 $nameLog  = strlen($_POST['name']);
                 $firstNameLog  = strlen($_POST['firstName']);
-                $addLog = ((int)$nameLog + (int)$firstNameLog + (int)date('Y'))-100;
+                $addLog = ((int)$nameLog + (int)$firstNameLog + (int)date('Y'))-rand(1,100);
                 $code = $letter.''.$addLog;
                 $this->GuestEvent->create([
                     'name'=> $_POST['name'],

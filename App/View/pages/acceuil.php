@@ -74,18 +74,21 @@
     <?php } ?>
     <div class="container-fluid py-4" >
     <div class="col-lg-12">
-    <div class="card" style="background:black;">
+    <div class="card" style="background:rgb(6, 85, 255);">
       <div class="card-header pb-0 p-3">
         <h6 class="mb-0">Event</h6>
       </div>
-      <div class="col-md-10 d-flex justify-content-end align-items-center">
-
-        <small><a href="?src=addEvent" style="color:deeppink; font-weight:800;">Ajouter</a></small>
-      </div>
+     
       <div class="card-body p-3">
         <ul class="list-group">
-          <?php foreach ($event as $events) : ?>
-            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+          <?php foreach ($event as $events) :
+            if(date_format(date_create($events->dateEvent), 'Y-m-d  H:i:s') < date('Y-m-d  H:i:s')){
+
+            }else{
+
+            
+            ?>
+            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg" >
               <div class="d-flex align-items-center">
                 <div class="  px-2">
                   <div>
@@ -95,7 +98,7 @@
                 </div>
                 <div class="d-flex flex-column">
                   <h6 class="mb-1 text-dark text-sm"> <a href="?src=viewEvent&id=<?= $events->id; ?>"><?= $events->title; ?></a></h6>
-                  <span class="text-xs bold"><?= date_format(date_create($events->dateEvent), 'd M Y  à  H:i'); ?> ,
+                  <span class="text-xs bold" style="color:black; font-weight:900;"><?= date_format(date_create($events->dateEvent), 'd M Y  à  H:i'); ?> 
                     
                     <span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(<?= count($this->GuestEvent->findGuestEvent($events->id)) ;?>)</span>
                 </span>
@@ -104,20 +107,7 @@
               <div class=" d-flex">
 
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?= $events->id; ?>" aria-hidden="true"></a>
-                </button>&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="icon icon-users" href="?src=viewGuests&id=<?= $events->id; ?>" aria-hidden="true"></a>
-                </button>&nbsp;&nbsp;&nbsp;
-
-                <form action="?src=deleteEvent&id=<?= $events->id; ?>" method="post" class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <input type="hidden" name="id" value="<?= $events->id; ?>">
-                  <button style="font-size: 15px; border: none; background:none; color:red;" href="?src=deleteEvent&id=<?= $events->id; ?>" class="icon icon-trash"></button>
-
-                </form>&nbsp;&nbsp;
-
-                <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="ni ni-bold-right" href="?src=viewEvent&id=<?= $events->id; ?>"></a>
+                  <a style="font-size: 20px; font-weight:900;" class="icon-angle-right" href="?src=viewEvent&id=<?= $events->id; ?>"></a>
                 </button>
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
                   <a class="" aria-hidden=" true"></a>
@@ -125,7 +115,7 @@
 
               </div>
             </li>
-          <?php endforeach; ?>
+          <?php } endforeach; ?>
         </ul>
       </div>
     </div>

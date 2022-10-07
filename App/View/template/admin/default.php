@@ -2,7 +2,7 @@
 
 use App\App;
 // header('Refresh:5');
-$user =  App::getTable('Auth')->find($_SESSION['auth']);
+$user = App::getTable('Auth')->find($_SESSION['auth']);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,28 +10,28 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="public/css/set/images/logo1.png" type="image/gif" />
+  <link rel="icon" href="public/css/set/images/logo2.png" type="image/gif" />
   <title>
-    <?= $title = $title ?? 'draya'; ?>
+    <?=$title = $title ?? 'draya';?>
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-  <link rel="stylesheet" href="nm;/public/css/set/css/font-awesome/font-awesome.css">
+
   <!-- Nucleo Icons -->
-  <link href="public/css/assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
-  <link href="public/css/fonts/icomoon/icomoon/style.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="../App/View/template/set/slider/css/slider.css">
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="./public/css/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./public/css/assets/css/nucleo-svg.css" rel="stylesheet" />
   
+  <link rel="stylesheet" type="text/css" href="public/css/slider/css/slider.css">
+  <!-- Font Awesome Icons -->
+ 
+ <link rel="stylesheet" href="public/css/set/css/font-awesome/font-awesome.css">
   <!-- CSS Files -->
   <link id="pagestyle" href="public/css/assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
   <link id="pagestyle" href="public/css/assets/css/find.css" rel="stylesheet" />
-  
+<link href="public/css/fonts/icomoon/icomoon/style.css" rel="stylesheet" />
   <!-- <link rel="stylesheet" href="../App/View/template/set/post/css/icomoon.css"> -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-
+ 
   <!-- CSS Files -->
 
 </head>
@@ -42,7 +42,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" " target="_blank">
-        <img src="public/css/set/images/logo1.png" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="public/css/set/images/logo2.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">DRAYA MODEL</span>
       </a>
     </div>
@@ -102,7 +102,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="?src=logOut&id=<?= $user->id; ?>">
+          <a class="nav-link" href="?src=logOut&id=<?=$user->id;?>">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-single-copy-04 text-warning text-sm opacity-10">
               </i>
@@ -115,10 +115,10 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
       </ul>
     </div>
     <div class="sidenav-footer mx-3 ">
-      <?php foreach (App::getTable('UsersPicture')->findPicture($user->id) as $picture) : ?>
+      <?php foreach (App::getTable('UsersPicture')->findPicture($user->id) as $picture): ?>
         <div class="card card-plain shadow-none" id="sidenavCard">
-          <img class="w-50 mx-auto" src="App/Photo/UsersPicture/<?= $picture->picture; ?>" alt="sidebar_illustration">
-        <?php endforeach; ?>
+          <img class="w-50 mx-auto" src="App/Photo/UsersPicture/<?=$picture->picture;?>" alt="sidebar_illustration">
+        <?php endforeach;?>
         </div>
     </div>
   </aside>
@@ -129,9 +129,9 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?= $title = $title ?? 'page'; ?></li>
+            <li class="breadcrumb-item text-sm text-white active" aria-current="page"><?=$title = $title ?? 'page';?></li>
           </ol>
-          <h6 class="font-weight-bolder text-white mb-0"><?= $title = $title ?? 'draya'; ?></h6>
+          <h6 class="font-weight-bolder text-white mb-0"><?=$title = $title ?? 'draya';?></h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -144,7 +144,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
             <li class="nav-item d-flex align-items-center">
               <a href="?src=profile" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none"><?= $user->username; ?></span>
+                <span class="d-sm-inline d-none"><?=$user->username;?></span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -240,7 +240,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
     </nav>
     <!-- End Navbar -->
 
-    <?= $content ?>
+    <?=$content?>
     <footer class="footer pt-3  ">
       <div class="container-fluid">
         <div class="row align-items-center justify-content-lg-between">
@@ -359,7 +359,7 @@ $user =  App::getTable('Auth')->find($_SESSION['auth']);
           backgroundColor: gradientStroke1,
           borderWidth: 3,
           fill: true,
-          data: [" ", <?= $pourcentage_notice; ?>, <?= $pourcentage_news; ?>, <?= $pourcentage_model; ?>, <?= $pourcentage_article; ?>, " ", 100],
+          data: [" ", <?=$pourcentage_notice;?>, <?=$pourcentage_news;?>, <?=$pourcentage_model;?>, <?=$pourcentage_article;?>, " ", 100],
           maxBarThickness: 6
 
         }],
