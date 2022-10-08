@@ -522,6 +522,26 @@ class AdminController extends AppController
 
         $this->find("pages.admin.pages.editPicture3", compact('title', 'find'));
     }
+    public function  editEvent()
+    {
+      
+        $find = $this->Event->find($_GET['id']);
+        if (!empty($_POST)) :
+            if (isset($_POST)) :
+                $this->Event->update($_GET['id'],[
+                    'title' => $_POST['title'],
+                    'dateEvent' => $_POST['dateEvent'],
+                    'detail' => $_POST['detail']
+                    
+
+
+                ]);
+                header('Location:?src=admin');
+            endif;
+        endif;
+        $date = date_format(date_create($find->dateEvent),'d-m-Y  H:i');
+        $this->default2("pages.admin.pages.editEvent", compact('find','date'));
+    }
 
     public function EditService()
     {

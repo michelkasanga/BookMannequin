@@ -155,7 +155,11 @@ if ($src === 'home') {
 } elseif ($src === 'editPersonneTitle') {
     $controller = new AdminController();
     $controller->editPersonneTitle();
-} elseif ($src === 'addAbout') {
+}elseif ($src === 'editEvent') {
+    $controller = new AdminController();
+    $controller->editEvent();
+}
+ elseif ($src === 'addAbout') {
     $controller = new AdminController();
     $controller->AddAbout();
 } elseif ($src === 'deleteNews') {

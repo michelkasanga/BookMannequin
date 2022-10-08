@@ -11,7 +11,7 @@ $user = App::getTable('Auth')->find($_SESSION['auth']);
             <div class="row justify-content-center">
                 <div class="col-lg-5 text-center mx-auto">
                     <h1 class="text-white mb-2 mt-5">Event</h1>
-                    <p class="text-lead text-white">Ajouter un evenement en remplissant les champs <b><?=$user->username;?></b> </p>
+                    <p class="text-lead text-white">Editer un Evennement <b><?= $user->username;?></b> </p>
                 </div>
             </div>
         </div>
@@ -28,19 +28,16 @@ $user = App::getTable('Auth')->find($_SESSION['auth']);
 
                         <form method="post" action="" enctype="multipart/form-data" role="form">
                             <div class="mb-3">
-                                <input type="text" name="title" class="form-control" placeholder="Nom  de l'evenement " aria-label="Name">
+                                <input type="text" name="title" class="form-control" value="<?= $find->title;?>" placeholder="Nom  de l'evenement " aria-label="Name">
                             </div>
                             <div class="mb-3">
                                 <input type="datetime-local" name="dateEvent" class="form-control" placeholder="date de l'evenement" aria-label="Date">
-                               
 
                             </div>
                             <div class="mb-3">
-                                <input type="text" name="detail" class="form-control" placeholder="detail de l'evennement" aria-label="Name">
+                                <input type="text" name="detail" class="form-control" value="<?= $find->detail;?>" placeholder="detail de l'evennement" aria-label="Name">
                             </div>
-                            <div class="mb-3">
-                                <input type="file" name="picture" class="form-control" placeholder="photo" aria-label="Password">
-                            </div>
+                            
                             
 
                             <div class="text-center">

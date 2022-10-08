@@ -341,15 +341,15 @@ if (strlen($all->title) <= 15) {
                   <span class="text-xs bold"><?=date_format(date_create($events->dateEvent), 'd M Y  à  H:i');?> ,
 
                     <span class="font-weight-bold" style="color:deeppink; font-family:cursive; ">, invités(<?=count($this->GuestEvent->findGuestEvent($events->id));?>)</span>
-                    <span class="font-weight-bold" style="color:black; font-family:cursive; ">, status(  
-                      <?php if(date_format(date_create($events->dateEvent), 'Y-m-d  H:i:s') < date('Y-m-d  H:i:s')){ echo '<span style="color:red;"> Expirer </span>';}else{echo '<span style="color:green;"> En cours </span>';}?>)</span>
+                    <span class="font-weight-bold" style="color:black; font-family:cursive; ">, status(
+                      <?php if (date_format(date_create($events->dateEvent), 'Y-m-d  H:i:s') < date('Y-m-d  H:i:s')) {echo '<span style="color:red;"> Expirer </span>';} else { echo '<span style="color:green;"> En cours </span>';} ?>)</span>
                 </span>
                 </div>
               </div>
               <div class=" d-flex font-weight-bold">
 
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
-                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?=$events->id;?>" aria-hidden="true"></a>
+                  <a style="font-size: 15px;" class="icon icon-pencil" href="?src=editEvent&id=<?=$events->id; ?>" aria-hidden="true"></a>
                 </button>&nbsp;&nbsp;&nbsp;
                 <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto">
                   <a style="font-size: 15px;" class="icon icon-users" href="?src=viewGuests&id=<?=$events->id;?>" aria-hidden="true"></a>
